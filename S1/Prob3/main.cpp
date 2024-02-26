@@ -4,7 +4,9 @@
 int main() {
 
 	char arr[256];	
-	scanf(" %[^\n]", arr);
+	// https://cplusplus.com/reference/cstdio/scanf/ 
+	// read 256 chars up to '\n', removing trailing spaces
+	scanf(" %[^\n][256]", arr);
 	printf("in arr: %s\n", arr);
 	char words[128][256];
 	unsigned int wordCnt = 0;
