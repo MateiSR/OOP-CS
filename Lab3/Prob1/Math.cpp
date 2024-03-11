@@ -1,4 +1,7 @@
 #include "Math.h"
+#include <algorithm>
+#include <cstdio>
+#include <cstdlib>
 #include <cstring>
 #include <stdarg.h>
 
@@ -26,9 +29,19 @@ char *Math::Add(const char *s1, const char *s2) {
     return nullptr;
   int len1 = strlen(s1);
   int len2 = strlen(s2);
-  int lenTotal = len1 + len2 + 1;
+  int lenTotal = std::max(len1, len2) +
+                 2; // nullptr & 1 extra digit if last operation has carry
+  int i = 0, j = 0;
+
   char *res = new char[lenTotal];
-  strcpy(res, s1);
-  strcat(res, s2);
+
+  int num1 = atoi(s1);
+  int num2 = atoi(s2);
+
+  int numRes = num1 + num2;
+
+  sprintf(res, "%d", numRes);
+  
+
   return res;
 }
