@@ -2,8 +2,14 @@
 
 class Canvas
 {
+
+private:
+  char **matrix;
+  int width, height;
+
 public:
     Canvas(int width,int height);
+    ~Canvas();
     void DrawCircle(int x, int y, int ray, char ch);
     void FillCircle(int x, int y, int ray, char ch);
     void DrawRect(int left, int top, int right, int bottom, char ch);

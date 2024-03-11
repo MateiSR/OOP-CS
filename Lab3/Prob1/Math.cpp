@@ -31,7 +31,6 @@ char *Math::Add(const char *s1, const char *s2) {
   int len2 = strlen(s2);
   int lenTotal = std::max(len1, len2) +
                  2; // nullptr & 1 extra digit if last operation has carry
-  int i = 0, j = 0;
 
   char *res = new char[lenTotal];
 
@@ -41,7 +40,6 @@ char *Math::Add(const char *s1, const char *s2) {
   int numRes = num1 + num2;
 
   sprintf(res, "%d", numRes);
-  
 
   return res;
 }
