@@ -49,5 +49,10 @@ int main() {
   root.addNode(node222, 7);
   printf("node 222 count of nodes: %d\n", root.getChildrenCount(node222));
   printf("root count of nodes: %d\n", root.getChildrenCount(&root));
+  Tree<double> t;
+  t.addNode(nullptr, 1.0);
+  Tree<double> *_node1 = t.find(1.0);
+  t.addNode(_node1, 2);
+  t.print();
   return 0;
 }

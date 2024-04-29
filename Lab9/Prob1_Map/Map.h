@@ -96,6 +96,7 @@ template <typename K, typename V> void Map<K, V>::clear() {
 }
 
 template <typename K, typename V> Pair<K, V> *Map<K, V>::begin() {
+  index = 0;
   return data;
 }
 
